@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Xml.Serialization;
 
 #pragma warning disable CS0219 // Variable is assigned but its value is never used
 #pragma warning disable CA1822 // Mark members as static
@@ -24,7 +25,7 @@ namespace Taschenrechner.Demo
 		/// und einem Funktionskörper (der Inhalt zwischen "{" und "}").
 		/// Im Funktionskörper steht der Code der ausgeführt werden soll wenn die Methode ausgeführt wird.
 		/// </summary>
-		public void EineLeereMethode()
+		private void EineLeereMethode()
 		{
 			// Hier wird nichts ausgeführt.
 			// Um eine Methode auszuführen muss vorgängig eine Instanz der Klasse erzeugt worden sein, welche diese Methode beinhaltet.
@@ -35,7 +36,7 @@ namespace Taschenrechner.Demo
 		/// <summary>
 		/// Eine Methode welche die wichtigsten Datentypen vorstellt.
 		/// </summary>
-		public void DatenTypen()
+		public bool DatenTypen()
 		{
 			// Wahrheitswerte (bool) kennen lediglich zwei verschiedene Werte (true/false), richtig oder falsch.
 			// Erstellt eine Variable vom Typ "bool" (Wahrheitswert) und weist den Wert "true" zu.
@@ -54,8 +55,11 @@ namespace Taschenrechner.Demo
 
 			// Natürlich können mit Zahlen auch die Grundrechenoperationen (+, -, *, /) ausgeführt werden.
 			int ergebnis = ganzzahl + ganzzahl;
+			int ergebnis4 = ganzzahl - ganzzahl;
 			float ergebnis2 = ganzzahl * kommaZahl1;
 			double ergebnis3 = ganzzahl / kommaZahl2;
+
+			return true;
 		}
 
 		/// <summary>
@@ -133,6 +137,7 @@ namespace Taschenrechner.Demo
 			}
 
 			// FRAGE: Welchen Wert hat "eineGanzzahl" am Ende?
+			// 5
 		}
 
 		/// <summary>
@@ -160,6 +165,8 @@ namespace Taschenrechner.Demo
 			// Der StringBuilder eignet sich um mehre Textstücke speichereffizient zusammenzufügen.
 			StringBuilder textErsteller = new StringBuilder();
 
+			string test = "123" + "456";
+
 			// Mit foreach kann für jeden "text" in "listeAusTexten" eine Aktion ausgeführt werden.
 			foreach (string text in listeAusTexten)
 			{
@@ -169,6 +176,7 @@ namespace Taschenrechner.Demo
 
 				// Hier wird "text" in dem StringBuilder "textErsteller" hinzugefügt.
 				textErsteller.Append(text);
+				textErsteller.Replace("TEXT", "REPLACED");
 			}
 			// Über die Methode "ToString()" kann aus jedem Objekt ein Text erzeugt werden.
 			// Beim StringBuilder führt dies dazu, dass alle Textstücke zusammengefügt werden.
@@ -181,6 +189,11 @@ namespace Taschenrechner.Demo
 		// Frage: Was sind Parameter?
 		// Frage: Was ein Rückgabewert?
 		// Frage: Was für ein Datentyp hat der Rückgabewert / die Zahlen?
+		public double AddMethode(double zahl1, double zahl2)
+		{
+			double summe = zahl1 + zahl2;
+			return summe;
+		}
 	}
 }
 

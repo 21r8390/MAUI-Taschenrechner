@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Taschenrechner.Demo;
 
 namespace Taschenrechner
 {
@@ -6,6 +7,9 @@ namespace Taschenrechner
 	{
 		public static MauiApp CreateMauiApp()
 		{
+			//CSharpDemo demo = new CSharpDemo();
+			//double ergebnis = demo.AddMethode(12.5, 21);
+
 			var builder = MauiApp.CreateBuilder();
 			builder
 				.UseMauiApp<App>()

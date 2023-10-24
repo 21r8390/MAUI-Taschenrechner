@@ -5,8 +5,15 @@
 	/// </summary>
 	public enum Ziffer
 	{
+		Null,
 		Eins,
 		Zwei,
-		// TODO: Restliche Ziffern ergänzen
+		Drei,
+		Vier,
+		Fuenf,
+		Sechs,
+		Sieben,
+		Acht,
+		Neun,
 	}
 }

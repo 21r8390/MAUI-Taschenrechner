@@ -8,5 +8,10 @@
 		{
 			Text = string.Empty;
 		}
+
+		public void Abcd()
+		{
+			Text += "abcd";
+		}
 	}
 }

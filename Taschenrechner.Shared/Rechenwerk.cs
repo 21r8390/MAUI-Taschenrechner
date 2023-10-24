@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Text;
 
 namespace Taschenrechner.Shared
 {
@@ -19,6 +20,7 @@ namespace Taschenrechner.Shared
 		{
 			// TODO: Hier müssen Felder und Eigenschaften vom Rechenwerkt mit sinnvollen Startwerten bestückt werden.
 			operationen = new List<Operation>();
+			operationen.Add(new Operation(0.0));
 		}
 
 		/// <summary>
@@ -34,6 +36,9 @@ namespace Taschenrechner.Shared
 		{
 			// TODO: Was muss passieren, wenn eine neue Ziffer eingegeben wurde?
 			// TIPP: Wenn die aktuelle Operation eine Zahl ist muss etwas Anderes passieren als wenn die aktuelle Operation bereits ein Operator ist.
+
+			int zahl = (int)ziffer;
+			operationen.Add(new Operation(zahl));
 		}
 
 		/// <summary>
@@ -44,6 +49,8 @@ namespace Taschenrechner.Shared
 		{
 			// TODO: Was muss passieren, wenn ein neuer Operator eingegeben wurde?
 			// TIPP: Wenn die aktuelle Operation eine Zahl ist muss etwas Anderes passieren als wenn die aktuelle Operation bereits ein Operator ist.
+
+			operationen.Add(new Operation(@operator));
 		}
 
 		/// <summary>
@@ -63,6 +70,7 @@ namespace Taschenrechner.Shared
 		public void Loeschen()
 		{
 			operationen.Clear();
+			operationen.Add(new Operation(0.0));
 		}
 
 		/// <summary>
@@ -74,8 +82,22 @@ namespace Taschenrechner.Shared
 			// TODO: Wie kann aus dem Feld "operationen" ein lesbarer Text erzeugt werden?
 			// TIPP: foreach und StringBuilder verwenden
 
-			// Gibt einen leeren Text zurück.
-			return string.Empty;
+			var anzeigeText = new StringBuilder();
+
+			foreach (var operation in operationen)
+			{
+				if (operation.Typ == OperationsTyp.Operator)
+				{
+
+					anzeigeText.Append("+");
+				}
+				else
+				{
+					anzeigeText.Append(operation.Zahl);
+				}
+			}
+
+			return anzeigeText.ToString();
 		}
 	}
 }

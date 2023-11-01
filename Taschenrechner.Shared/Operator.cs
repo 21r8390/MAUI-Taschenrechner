@@ -44,4 +44,19 @@
 		///// </summary>
 		//Hoch2
 	}
+
+	public static class OperatorExtensions
+	{
+		public static string ToDisplayString(this Operator @operator)
+		{
+			return @operator switch
+			{
+				Operator.Plus => "+",
+				Operator.Minus => "–",
+				Operator.Multiplizieren => "•",
+				Operator.Dividieren => "÷",
+				_ => throw new NotImplementedException($"Unbekannter Operator {@operator}"),
+			};
+		}
+	}
 }

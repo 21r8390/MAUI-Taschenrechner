@@ -1,0 +1,8 @@
+﻿@using Taschenrechner.Shared;
+
+<Button Click="@(async () => await Click.InvokeAsync(Ziffer))" Css="btn-primary">@((int)Ziffer)</Button>
+
+@code {
+	[Parameter] public Ziffer Ziffer { get; set; }
+	[Parameter] public EventCallback<Ziffer> Click { get; set; }
+}

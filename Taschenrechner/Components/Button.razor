@@ -1,0 +1,12 @@
+﻿@using Taschenrechner.Shared;
+
+<button @onclick="@Click"
+		class=@($"btn m-3 col btn-lg w-100 {(ChildContent == null ? "pe-none" : string.Empty)} {Css}")>
+	@ChildContent
+</button>
+
+@code {
+	[Parameter] public EventCallback Click { get; set; }
+	[Parameter] public RenderFragment? ChildContent { get; set; }
+	[Parameter] public string? Css { get; set; }
+}

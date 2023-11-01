@@ -1,11 +1,53 @@
 ﻿<h3>Rechner</h3>
 
-<div class="grid text-center">
-	<p class="g-col-12 user-select-none">@Rechenwerk.AnzeigeText</p>
+<p class="w-100 px-5 user-select-none text-end text-break fs-1 fw-bolder font-monospace">@Rechenwerk.AnzeigeText</p>
 
-	<button class="g-col-3 btn btn-primary">1</button>
-	<button class="g-col-3 btn btn-primary">2</button>
-	<button class="g-col-3 btn btn-primary">3</button>
+<hr />
 
-	<button @onclick="@Loeschen" class="g-col-3 btn btn-outline-primary">Löschen</button>
+<div class="container">
+	<div class="row">
+		<div class="container col-9">
+			<div class="row">
+				<Button Click="@Rechenwerk.Loeschen" Css="btn-secondary">Löschen</Button>
+				<Button />
+				<Button />
+			</div>
+
+			<div class="row">
+				<ZifferButton Ziffer="Ziffer.Sieben" Click="Rechenwerk.ZahlDazu" />
+				<ZifferButton Ziffer="Ziffer.Acht" Click="Rechenwerk.ZahlDazu" />
+				<ZifferButton Ziffer="Ziffer.Neun" Click="Rechenwerk.ZahlDazu" />
+			</div>
+
+			<div class="row">
+				<ZifferButton Ziffer="Ziffer.Vier" Click="Rechenwerk.ZahlDazu" />
+				<ZifferButton Ziffer="Ziffer.Fuenf" Click="Rechenwerk.ZahlDazu" />
+				<ZifferButton Ziffer="Ziffer.Sechs" Click="Rechenwerk.ZahlDazu" />
+			</div>
+
+			<div class="row">
+				<ZifferButton Ziffer="Ziffer.Eins" Click="Rechenwerk.ZahlDazu" />
+				<ZifferButton Ziffer="Ziffer.Zwei" Click="Rechenwerk.ZahlDazu" />
+				<ZifferButton Ziffer="Ziffer.Drei" Click="Rechenwerk.ZahlDazu" />
+			</div>
+
+			<div class="row">
+				<ZifferButton Ziffer="Ziffer.Null" Click="Rechenwerk.ZahlDazu" />
+			</div>
+		</div>
+
+		<div class="container col-3">
+			@foreach (var @operator in Enum.GetValues<Operator>())
+			{
+				<div class="row">
+					<OperatorButton Operator="@(@operator)" Click="@Rechenwerk.OperatorDazu" />
+				</div>
+			}
+
+			<div class="row">
+				<Button Click="@Rechenwerk.Auswerten" Css="btn-secondary">=</Button>
+			</div>
+		</div>
+	</div>
 </div>
+

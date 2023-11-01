@@ -1,0 +1,8 @@
+﻿@using Taschenrechner.Shared;
+
+<Button Click="@(async () => await Click.InvokeAsync(Operator))" Css="btn-info">@Operator.ToDisplayString()</Button>
+
+@code {
+	[Parameter] public Operator Operator { get; set; }
+	[Parameter] public EventCallback<Operator> Click { get; set; }
+}

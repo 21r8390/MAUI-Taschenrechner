@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taschenrechner", "Taschenre
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taschenrechner.Shared", "Taschenrechner.Shared\Taschenrechner.Shared.csproj", "{AE45FFBA-D73B-402C-A82B-9FBE5DC512E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taschenrechner.Demo", "Taschenrechner.Demo\Taschenrechner.Demo.csproj", "{C0332232-6152-4D06-ADFE-3ADA8AAE86DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taschenrechner.Demo", "Taschenrechner.Demo\Taschenrechner.Demo.csproj", "{C0332232-6152-4D06-ADFE-3ADA8AAE86DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
